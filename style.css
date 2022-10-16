@@ -40,8 +40,7 @@ body::before {
 }
 
 .page {
-    max-width:100%;
-    margin: 0 auto;
+    min-width: 100%;
     padding-bottom: 6rem;
 }
 
@@ -93,7 +92,7 @@ main {
 .cards img{
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    height:100%;
     border-radius: 2rem;
 }
 
@@ -120,6 +119,10 @@ main .cards p {
     animation: topdown 1s forwards;
 }
 
+footer {
+    opacity: 0;
+}
+
 @keyframes downtop {
     0% {
         opacity: 0.5;
@@ -143,3 +146,81 @@ main .cards p {
         transform: translateY(0);
     }
 }
+
+@media (min-width: 900px) {
+
+    body::before {
+        width: 37.7rem;
+        height: 100%;
+        animation: lefttoright 1s forwards ease-in-out;
+    }
+
+    .page {
+        display: flex;
+        min-width: 900px;
+    }
+
+    header {
+        width: 37.7rem;
+        animation: lefttoright 2s forwards ease-in-out;
+    }
+
+
+    section {
+        width: 37.7rem;
+        color: var(--fc-primary);
+        font-size: var(--fs-body);
+    }
+
+    section p{
+        max-width: 27.5rem;
+        line-height: 3rem;
+    }
+
+    main div img{
+        opacity: 0.8;
+    }
+
+    main {
+        margin: 10rem auto;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    main div .cards{
+        margin: 2rem;
+    }
+
+
+    footer {
+        opacity: 1;
+        font-family: var(--ff-body);
+        color: black;
+        font-size: var(--fs-body);
+
+        display: block;
+        text-align: center;
+    }
+
+    footer a{
+        color:black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    main div img:hover {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    @keyframes lefttoright {
+        0% {
+            opacity: 0;
+            transform: translateX(-5rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
