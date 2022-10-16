@@ -77,23 +77,33 @@ section {
     padding: 0 3.6rem;
 }
 
+section p span{
+    opacity: 0;
+}
+
 main {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
 }
 
+main .col1, .col2, .col3 {
+    width: 100%;
+    margin:0 auto;
+    padding: 0;
+
+}
+
 .cards {
     margin: 0 3.2rem;
-
     animation: downtop 1s forwards ease-in;
 }
 
 .cards img{
     object-fit: cover;
     width: 100%;
-    height:100%;
     border-radius: 2rem;
+    margin-bottom: 3.2rem;
 }
 
 main .cards {
@@ -153,11 +163,12 @@ footer {
         width: 37.7rem;
         height: 100%;
         animation: lefttoright 1s forwards ease-in-out;
+        gap:0;
     }
 
     .page {
         display: flex;
-        min-width: 900px;
+        gap:0;
     }
 
     header {
@@ -175,6 +186,10 @@ footer {
     section p{
         max-width: 27.5rem;
         line-height: 3rem;
+    }
+
+    section p span{
+        opacity: 1;
     }
 
     main div img{
